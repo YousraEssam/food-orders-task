@@ -18,6 +18,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        IngredientStockUpdate::class => [
+            SendIngredientStockEmail::class,
+        ],
     ];
 
     /**
@@ -37,6 +40,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function shouldDiscoverEvents()
     {
-        return false;
+        return true;
     }
 }
